@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title> GAMEOVER! </title>
+	<script src="https://simplycodingcourses.com/files/simply.js"></script>
+	<script>
+	function start(){
+	sjs.open("target",500,400);
+	var menu_txt = new sjs.Text("Sorry, try again?", 20, "green")
+	menu_txt.centerH();
+		
+	var designBtn = new sjs.Button("Main Menu?", function(){
+	window.location = "index.html";
+	});
+	designBtn.center();
+
+	var designBtn = new sjs.Button("Continue?", function(){
+	window.location = "firstspot.html";
+	});
+	designBtn.center().bottom();
+
+	} //end start
+	</script>
+	</head>
+	<body onload="start()">
+		<h1> Space~escape GAMEOVER! </h1>
+
+		<div id="target" style="margin:auto;background:blue;"></div>
+	</body>
+</html>

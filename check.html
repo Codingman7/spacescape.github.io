@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title> You rockin taco's! </title>
+	<script src="https://simplycodingcourses.com/files/simply.js"></script>
+	<script>
+	function start(){
+	sjs.open("target",500,400);
+	var info_text = new sjs.Text("YOU SEE EM ALL!", 20, "black");
+	info_text.bottom().centerH();
+		
+	var designBtn = new sjs.Button("1", function(){
+	window.location = "wave1.html";
+	});
+	designBtn.center();
+
+	var designBtn = new sjs.Button("2", function(){
+	window.location = "wave2.html";
+	});
+	designBtn.left();
+
+	var designBtn = new sjs.Button("3", function(){
+	window.location = "wave3.html";
+	});
+	designBtn.bottom();
+
+	var designBtn = new sjs.Button("4", function(){
+	window.location = "wave4.html";
+	});
+	designBtn.right();
+
+	var designBtn = new sjs.Button("menu", function(){
+	window.location = "index.html";
+	});
+	designBtn.center().top();
+
+	} //end start
+	</script>
+	</head>
+	<body onload="start()">
+		<h1> Space~escape WINNER! </h1>
+
+		<div id="target" style="margin:auto;background:pink;"></div>
+	</body>
+</html>

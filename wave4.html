@@ -1,0 +1,151 @@
+<html>
+	<head>
+		<title> WAVE 1 </title>
+			<script src="https://simplycodingcourses.com/files/simply.js"></script>
+	</head>
+	<script> 
+	function start(){
+	sjs.open("target",500,400);
+	// background and stuff!
+	var background = new sjs.Image("Images/background.png");
+	background.setSize(500,400);
+
+	var designBtn = new sjs.Button("Menu?", function(){
+	window.location = "index.html";
+	});
+	designBtn.top().right();
+
+	var player = new sjs.Image("Images/player.png");
+	player.type = "player";
+	player.center().bottom();
+	player.setSize(20,20);
+	player.setGravity(2);
+	player.friction = .5;
+
+	sjs.keyDown(UP_KEY, function(){
+	player.pushUp(2);
+	});
+	
+
+	sjs.keyDown(LEFT_KEY, function(){
+	player.pushLeft(2);
+	});
+
+	sjs.keyDown(RIGHT_KEY, function(){
+	player.pushRight(2);
+	});
+
+	sjs.keyDown(DOWN_KEY, function(){
+	player.pushDown(4);
+	});
+
+	var enemy = new sjs.Image("Images/crab.gif");
+	enemy.type = "enemy";
+	enemy.setSize(100,50);
+	enemy.left();
+	enemy.noBounds = true;
+	enemy.pushRight(10);
+	enemy.pushDown(10);
+
+	var enemy2 = new sjs.Image("Images/crab.gif");
+	enemy2.type = "enemy";
+	enemy2.setSize(100,50);
+	enemy2.right();
+	enemy2.noBounds = true;
+	enemy2.pushLeft(10);
+	enemy2.pushDown(10);
+
+	var enemy3 = new sjs.Image("Images/crab.gif");
+	enemy3.type = "enemy";
+	enemy3.setSize(100,50);
+	enemy3.bottom();
+	enemy3.noBounds = true;
+	enemy3.pushRight(10);
+	enemy3.pushUp(10);
+
+	var enemy4  = new sjs.Image("Images/crab.gif")
+	enemy4.type = "enemy";
+	enemy4.setSize(100,50);
+	enemy4.bottom().right();
+	enemy4.noBounds = true;
+	enemy4.pushLeft(10);
+	enemy4.pushUp(10);
+
+	var enemy5  = new sjs.Image("Images/crab.gif")
+	enemy5.type = "enemy";
+	enemy5.setSize(100,50);
+	enemy5.center().top();
+	enemy5.noBounds = true;
+	enemy5.pushDown(10);
+
+	var enemy5  = new sjs.Image("Images/crab.gif")
+	enemy5.type = "enemy";
+	enemy5.setSize(100,50);
+	enemy5.center();
+	enemy5.noBounds = true;
+
+	var enemy6  = new sjs.Image("Images/enemy2.jpg")
+	enemy6.type = "enemy";
+	enemy6.setSize(75,75);
+	enemy6.center();
+	enemy6.noBounds = true;
+	enemy6.setGravity(.54);
+	enemy6.pushUp(5);
+
+	var enemy6  = new sjs.Image("Images/enemy2.jpg")
+	enemy6.type = "enemy";
+	enemy6.setSize(50,50);
+	enemy6.left();
+	enemy6.noBounds = true;
+	enemy6.setGravity(.54);
+	enemy6.pushUp(5);
+
+	var enemy6  = new sjs.Image("Images/enemy2.jpg")
+	enemy6.type = "enemy";
+	enemy6.setSize(50,50);
+	enemy6.right();
+	enemy6.noBounds = true;
+	enemy6.setGravity(.54);
+	enemy6.pushUp(5);
+
+	var flyenemy = new sjs.Image("Images/enemy3.png");
+	flyenemy.type = "enemy";
+	flyenemy.setSize(100,100);
+	flyenemy.center().top();
+	var flyA = new sjs.Image("Images/boss_maybe.png");
+	flyA.type = "missle";
+	flyA.setSize(20,20);
+	flyA.setGravity(.5);
+	var flyB = new sjs.Image("Images/boss_maybe.png");
+	flyB.type = "missle";
+	flyB.setSize(20,20);
+	flyB.setGravity(.5);
+	flyB.top().right();
+
+	sjs.onHit("player","missle",function(x,y){
+		x.destroy();
+		window.location = "gameover.html";
+	});
+	
+	sjs.onHit("player","enemy",function(x,y){
+		x.destroy();
+		window.location = "gameover.html";
+	});
+
+	var port = new sjs.Image("Images/portal.gif");
+	port.type = "port";               
+	port.setSize(400,5);
+	port.noBounds = true;
+
+	sjs.onHit("player","port",function(x,y){
+		x.destroy();
+		window.location = "win.html";
+	});
+
+	}
+	 </script>
+	<body onload="start()">
+			<h1> Wave 4, GIANTS!! Your camrera is kinda far! </h1>
+			<div id="target" style="margin:auto;background:grey;"></div>
+	</body>
+</html>

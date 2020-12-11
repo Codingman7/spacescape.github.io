@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title> Space Menu </title>
+	<script src="https://simplycodingcourses.com/files/simply.js"></script>
+	<script>
+	function start(){
+	sjs.open("target",500,400);
+	var menu_txt = new sjs.Text("Space game, wanna play?", 20, "green")
+	menu_txt.centerH();
+	var info_text = new sjs.Text("Created By Jack Saltsgaver!", 20, "black");
+	info_text.bottom().centerH();
+		
+	var designBtn = new sjs.Button("Play", function(){
+	window.location = "firstspot.html";
+	});
+	designBtn.center();
+
+	} //end start
+	</script>
+	</head>
+	<body onload="start()">
+		<h1> Space~escape MENU! </h1>
+
+		<div id="target" style="margin:auto;background:blue;"></div>
+	</body>
+</html>

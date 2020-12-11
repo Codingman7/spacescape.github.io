@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title> You did what!?! </title>
+	<script src="https://simplycodingcourses.com/files/simply.js"></script>
+	<script>
+	function start(){
+	sjs.open("target",500,400);
+	var menu_txt = new sjs.Text("YOU WENT IN MY PORTAL!?! YOU WILL NOT ESCPAE SPACE... ALIVE!", 20, "green")
+	menu_txt.centerH();
+
+	var player = new sjs.Image("Images/player.png");
+	player.type = "player";
+	player.center().bottom();
+	player.setSize(50,50);
+	player.setGravity(.7);
+	player.friction = .5;
+
+	sjs.keyDown(UP_KEY, function(){
+	player.pushUp(2);
+	});
+	
+
+	sjs.keyDown(LEFT_KEY, function(){
+	player.pushLeft(2);
+	});
+
+	sjs.keyDown(RIGHT_KEY, function(){
+	player.pushRight(2);
+	});
+
+	sjs.keyDown(DOWN_KEY, function(){
+	player.pushDown(4);
+	});
+
+	var punisher = new sjs.Image("Images/boss_maybe.png");
+	punisher.type = "enemy";
+	punisher.setSize(300,300);
+	punisher.center();
+
+	sjs.onHit("player","enemy", function(x,y){
+		x.destroy
+		window.location = "gameover.html";
+	});
+
+	} //end start
+	</script>
+	</head>
+	<body onload="start()">
+		<h1> How dare you! </h1>
+
+		<div id="target" style="margin:auto;background:white;"></div>
+	</body>
+</html>

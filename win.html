@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title> You rockin taco's! </title>
+	<script src="https://simplycodingcourses.com/files/simply.js"></script>
+	<script>
+	function start(){
+	sjs.open("target",500,400);
+	var menu_txt = new sjs.Text("You did it!", 44, "green")
+	menu_txt.centerH();
+	var info_text = new sjs.Text("CONGRADULATIONS!", 20, "black");
+	info_text.bottom().centerH();
+		
+	var designBtn = new sjs.Button("Home screen", function(){
+	window.location = "index.html";
+	});
+	designBtn.center();
+
+	var designBtn = new sjs.Button("Other levels", function(){
+	window.location = "check.html";
+	});
+
+	} //end start
+	</script>
+	</head>
+	<body onload="start()">
+		<h1> Space~escape WINNER! </h1>
+
+		<div id="target" style="margin:auto;background:red;"></div>
+	</body>
+</html>
